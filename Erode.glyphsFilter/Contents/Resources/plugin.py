@@ -86,4 +86,8 @@ class Erode(FilterWithDialog):
 
 	@objc.python_method
 	def generateCustomParameter(self):
-		return "%s; teeth:%s;" % (self.__class__.__name__, Glyphs.defaults['org.simon-cozens.erode.teeth'])
+		segments = float(Glyphs.defaults['org.simon-cozens.erode.segments'])
+		spikiness = Glyphs.defaults['org.simon-cozens.erode.spikiness']
+		segProbability = Glyphs.defaults['org.simon-cozens.erode.segProbability']
+
+		return "%s; segments:%s; spikiness:%s; segProbability:%s" % (self.__class__.__name__, segments, spikiness, segProbability)
